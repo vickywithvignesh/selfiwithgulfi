@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/video_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@android:color/holo_red_light"
+    android:keepScreenOn="true"
+    tools:background="@android:color/holo_red_light"
+    tools:showIn="@layout/activity_video">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+
+            android:id="@+id/res"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:gravity="center"
+            android:text="FIRST CLICK HERE TO GET TOKENS" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <com.twilio.video.VideoView
+        android:id="@+id/thumbnail_video_view"
+        android:layout_width="160dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center|right"
+        android:visibility="gone"
+        app:mirror="true"
+        app:overlaySurface="true" />
+
+    <com.twilio.video.VideoView
+        android:id="@+id/primary_video_view"
+        android:layout_width="160dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center|left" />
+
+    <LinearLayout
+        android:id="@+id/status"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/video_status_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/room_status"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:background="@android:color/background_dark"
+        android:onClick="capturepic"
+        android:src="@mipmap/ic_launcher" />
+
+</FrameLayout>
